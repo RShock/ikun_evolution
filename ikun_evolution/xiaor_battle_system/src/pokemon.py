@@ -214,7 +214,7 @@ class Pokemon:
         max_hp = self._max_hp
         percent = tmp[max(-1, hp * 7 // max_hp)]
         party = '👿' if self.party != "our" else '🐔'
-        return f"({party}{percent}{hp}/{max_hp})"
+        return f"\n({party}{percent}{hp}/{max_hp})"
 
     def init_skill(self, skill: str):
         num = get_num(skill)
@@ -285,8 +285,8 @@ class Pokemon:
                 self.logger.log(f"{our.name}的攻击！{enemy.name}中毒了！受到每回合{damage}点的伤害（持续2回合）")
 
                 def _(pack: MsgPack):
-                    # 发送即将造成伤害的包，以此计算属性增减伤等属性
-                    pack2 = MsgPack.damage_pack(our, pack.get_owner(), damage, DamageType.POISON)
+                    # 毒 真无源伤害
+                    pack2 = MsgPack.damage_pack(None, pack.get_owner(), damage, DamageType.POISON)
                     self.msg_manager.send_msg(pack2)
                     enemy.hp = round(enemy.hp - pack2.get_damage())
                     self.logger.log(f"{enemy.name}中毒了，流失了{pack2.get_damage()}点血量{pack.get_owner().get_life_str()}")
@@ -418,10 +418,10 @@ class Pokemon:
             return
 
         if skill.startswith("剧毒之体"):
-            self.logger.log(f"{self.name}发动【剧毒之体】，以不能造成毒以外伤害的代价换来+20%毒伤，回合末立刻解毒")
+            self.logger.log(f"{self.name}发动【剧毒之体】，以不能造成毒以外伤害的代价换来敌人受到毒伤+20%，回合末立刻解毒")
             # 造成的毒伤害加倍 非毒伤害归零
             self.msg_manager.register(
-                new_buff(self, Trigger.DEAL_DAMAGE).name(skill).checker(is_self()).priority(
+                new_buff(self, Trigger.DEAL_DAMAGE).name(skill).checker(is_enemy_taken(self)).priority(
                     BuffPriority.CHANGE_DAMAGE_LAST).handler(
                     lambda pack: pack.damage(
                         pack.get_damage() * 1.2 if pack.check_damage_type(DamageType.POISON) else 0)))
@@ -443,7 +443,7 @@ class Pokemon:
         if skill.startswith("猛毒"):
             self.logger.log(f"{self.name}的猛毒发动了！敌人受到毒伤害+{num}%")
             self.msg_manager.register(
-                new_buff(self, Trigger.DEAL_DAMAGE).name(skill).checker(is_self())
+                new_buff(self, Trigger.DEAL_DAMAGE).name(skill).checker(is_enemy_taken(self))
                 .checker(lambda pack: pack.check_damage_type(DamageType.POISON))
                 .handler(lambda pack: pack.damage(pack.get_damage() * (100 + num) / 100)))
             return
