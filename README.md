@@ -42,5 +42,5 @@
 如果不会搞可以学一学如何安装`miniconda`,或者学一下正则表达式看看如何替换掉注解
 
 ## 反馈群
-![Screenshot_2022-12-17-19-56-09-565_com tencent mobileqq](https://user-images.githubusercontent.com/11630758/208240714-b75324f9-8081-4fbf-91ba-bcad98fd2fd5.jpg)
+![image](https://user-images.githubusercontent.com/11630758/208240745-be6a5daf-cf38-466e-8ce8-fb285e86e9b0.png)
 
