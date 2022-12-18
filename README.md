@@ -14,11 +14,7 @@
 | 敌人 | 30种 | 
 | 任务 | 8个 | 
 
-## 本版本即是最终版本
-
-不会进行修bug以外的更新了。
-
-所以，有没有佬可以把我的插件想办法变成nonebot2的（难点主要是真寻有自己的psql数据库）
+本插件已经移植至[nonebot2](https://github.com/RShock/nonebot_plugin_ikun_evolution)
 
 ## 玩法
 输入`加入只因进化录`后跟随系统提示即可。
