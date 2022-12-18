@@ -18,6 +18,8 @@
 
 ## 玩法
 输入`加入只因进化录`后跟随系统提示即可。
+![帮助](https://user-images.githubusercontent.com/11630758/208303088-0065fedc-71c5-4287-8e06-645af8647a7a.jpg)
+
 
 ## 缺点
 * 没有图片
