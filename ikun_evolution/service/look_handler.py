@@ -63,7 +63,7 @@ def show_skill_info(player, name):
         own = "未拥有" if sp_skill is None else f"已拥有"
     else:
         own = f"等级:{lv}"
-    msg = f"""{name}  技能等级：[{skill.min}-{skill.max}]
+    msg = f"""{skill.emoji}{name}  技能等级：[{skill.min}-{skill.max}]
 描述：{skill.des}
 当前{own}
 升级总需经验：{skill.exp}"""

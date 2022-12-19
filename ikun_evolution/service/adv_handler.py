@@ -266,7 +266,7 @@ async def adv_time_pass(event: GroupMessageEvent, force_go_home: bool = False) -
                     if d < 3:
                         log += f"你已经被{monster.name}打死{d}次了，如果超过3次，就可以通过查询指令查询击败它的攻略\n"
                     if d >= 3:
-                        log += f"分析成功，输入”查询{monster.name}可获取击杀攻略“\n"
+                        log += f"分析成功，输入【查询{monster.name}】可获取击杀攻略\n"
                 else:
                     log += f"这只怪物没有攻略，请自行挑战吧\n"
                 defeated = i

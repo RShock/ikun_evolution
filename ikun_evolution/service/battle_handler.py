@@ -49,7 +49,7 @@ def battle(data: dict, player: PlayerDB, enemy: Monster):
     # 然后是可能存在的地图技能（但是目前并不存在，不写了）
     # sp技能（也不存在，以后再写）
     if "游泳" not in data["skill"] and player.query_item("乌龟护符") >= 0.99:    # 本赛季没有装备系统，写个特判
-        pkm1.skillGroup.append("游泳4")
+        pkm1.skillGroup.append("游泳5")
 
     pkm2.name = enemy.name
     pkm2.MAX_HP = enemy.hp
