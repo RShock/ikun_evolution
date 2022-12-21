@@ -93,4 +93,4 @@ async def auto_sign(player: PlayerDB) -> str:
         player.buff["sign_day"] = now_day
         await player.update(bag=player.bag, collection=player.collection, buff=player.buff).apply()
         return "今日签到已完成，获得小沙漏一个喵"
-    return ""
+    return None
