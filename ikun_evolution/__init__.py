@@ -93,7 +93,7 @@ async def events_read():
 async def handle_first_register(event: GroupMessageEvent):
     player = await get_player(event)
     if player:
-        await register.reject(f"你已经有账号:{player.name} 了哦")
+        await register.finish(f"你已经有账号:{player.name} 了哦")
     user_name = (
         event.sender.card if event.sender.card else event.sender.nickname
     )
