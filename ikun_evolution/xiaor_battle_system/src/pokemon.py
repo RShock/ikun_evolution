@@ -212,7 +212,7 @@ class Pokemon:
         tmp = '▁▂▃▄▅▆▇█💀'
         hp = self.hp
         max_hp = self._max_hp
-        percent = tmp[max(-1, hp * 7 // max_hp)]
+        percent = tmp[min(7, max(-1, hp * 7 // max_hp))]
         party = '👿' if self.party != "our" else '🐔'
         return f"\n({party}{percent}{hp}/{max_hp})"
 
@@ -281,7 +281,7 @@ class Pokemon:
                 pack.not_allow()
                 our: "Pokemon" = pack.get_pack().get_our()
                 enemy: "Pokemon" = pack.get_pack().get_enemy()
-                damage = our.get_atk() * num // 100  # 注意中毒计算的atk以施加毒的回合为准
+                damage = max(0, our.get_atk() * num // 100)  # 注意中毒计算的atk以施加毒的回合为准
                 self.logger.log(f"{our.name}的攻击！{enemy.name}中毒了！受到每回合{damage}点的伤害（持续2回合）")
 
                 def _(pack: MsgPack):
