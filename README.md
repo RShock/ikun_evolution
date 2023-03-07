@@ -57,6 +57,12 @@
 
 第一次使用时请输入`重载配置`预防出现各种报错。
 
+## 新版本真寻适配
+
+如果你是看见这行文字之时才安装的真寻，你需要知道新版真寻已经没有gino了
+
+请去sqlFix分支下载临时补丁版本。且额外安装`gino`。
+
 ## 反馈群
 ![image](https://user-images.githubusercontent.com/11630758/208240745-be6a5daf-cf38-466e-8ce8-fb285e86e9b0.png)
 
