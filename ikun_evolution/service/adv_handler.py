@@ -7,7 +7,7 @@ from datetime import datetime
 from dateutil.relativedelta import relativedelta
 from nonebot.adapters.onebot.v11 import GroupMessageEvent
 
-from services import db
+from ..model.gino_db import db
 from .achievement_handler import add_achievement
 from ..service.battle_handler import battle
 from ..model.adv_model import ActionDB

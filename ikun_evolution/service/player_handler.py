@@ -3,7 +3,7 @@ import time
 from nonebot import logger
 from nonebot.adapters.onebot.v11 import GroupMessageEvent
 
-from services import db
+from ..model.gino_db import db
 from ..service.adv_handler import get_user_status
 from ..model.player_model import PlayerDB
 from ..utils import get_uid

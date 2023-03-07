@@ -1,6 +1,6 @@
 from nonebot.adapters.onebot.v11 import GroupMessageEvent
 
-from services import db
+from ..model.gino_db import db
 from .achievement_handler import add_achievement
 from ..service.adv_handler import get_player_status
 from .game_handler import Mission

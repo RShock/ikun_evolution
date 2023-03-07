@@ -1,4 +1,4 @@
-from services.db_context import db
+from .gino_db import db
 from datetime import datetime
 from services.log import logger
 

@@ -1,5 +1,5 @@
 from ..utils import get_act_str
-from services.db_context import db
+from .gino_db import db
 from datetime import datetime
 from services.log import logger
 

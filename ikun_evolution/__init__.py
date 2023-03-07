@@ -1,6 +1,7 @@
 import re
 import time
 from asyncio import sleep
+from .model.gino_db import init
 
 import nonebot
 from nonebot import Driver, logger
@@ -86,6 +87,7 @@ driver: Driver = nonebot.get_driver()
 @driver.on_startup
 async def events_read():
     await load_world_data()
+    await init()
 
 
 # 注册部分

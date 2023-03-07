@@ -1,0 +1,44 @@
+[
+  // 配置技能的等级 min:入手时的等级 max:最高可以升到的等级 des:技能描述
+  // exp:升级到满级所需要吞食最低级技能的次数(经验)，如果是最高级技能，只需要一半的次数
+  // 每个等级升级所需的经验增长率为一次函数，积分后为二次函数，具体每个等级要吞多少次直接用二次函数动态计算
+  // eatable:是否能被吃，默认可以被吃
+  {name: "机敏", min: 1, max: 10, des: "速度提高lv，决定出手顺序", exp: 100, emoji: '⏩'},
+  {name: "尖角", min: 10, max: 30, des: "攻击力增加lv", exp: 150, emoji: '🔪'},
+  {name: "毒液", min: 40, max: 60, des: "普攻变成lv%的毒伤害，毒持续2回合（更多信息可阅读帮助：【进阶】异常状态（毒）", exp: 60, emoji: '☣'},
+  {name: "攻击成长", min: 1, max: 10, des: "每次因战斗升级，攻击力+lv", exp: 150, emoji: '🔪'},
+  {name: "防御成长", min: 1, max: 6, des: "每次因战斗升级，防御力+lv", exp: 150, emoji: '🛡️'},
+  {name: "生命成长", min: 10, max: 42, des: "每次因战斗升级，生命+lv", exp: 150, emoji: '❤'},
+  {name: "利爪", min: 10, max: 18, des: "攻击力增加lv%", exp: 100, emoji: '🔪'},
+  {name: "地区霸主", des: "特殊体质，一片区域的主宰（所有属性增加1级，额外的技能槽位）", eatable: false, emoji: '👑', sp: true},
+  {name: "吞天者", des: "特殊体质，吞噬万物精华权能的证明", eatable: false, emoji: '🐋', sp: true},
+  {name: "野性", min:10, max:41, des:"攻击最终伤害增加lv%", exp: 150, emoji: '🔪'},
+  {name: "尖牙", min:10, max:41, des:"lv%概率暴击", exp: 150, emoji: '🔪'},
+  {name: "暴怒", min:10, max:45, des:"血量越低，增加的攻击越高，最高+lv", exp: 150, emoji: '🔪'},
+  {name: "吸收", min: 1,max: 12,des: "+lv攻击和+lv%攻击造成的伤害吸收为血量",exp: 150, emoji: '🔪'},
+  {name: "长生", min: 50,max: 100,des: "血量回复量和吸血量+lv%",exp: 150, emoji: '🩹'},
+  {name: "健壮", min: 75,max: 150,des: "最大生命+lv",exp: 150, emoji: '❤'},
+  {name: "结实", min: 20,max: 40,des: "最大生命+lv%",exp: 150, emoji: '❤'},
+  {name: "鳞片", min: 10,max: 20,des: "防御+lv",exp: 150, emoji: '🛡'},
+  {name: "铠甲", min: 10,max: 20,des: "防御+lv%",exp: 150, emoji: '🛡'},
+  {name: "愈合", min: 1,max: 10,des: "每回合结束时，回复lv%血量，如果该回合没有因击中而受伤，回复量*1.5",exp: 150, emoji: '🩹'},
+  {name: "天才", min: 0,max: 1,des: "角色战斗等级上升lv级，装备在本技能右侧的成长技能能享受该等级加成",exp: 150, emoji: '🧠'},
+  {name: "游泳", min: 0,max: 10,des: "lv回合内暂停【溺水】的效果",exp: 150, emoji: '🏊'},
+  {name: "溺水", min: 0,max: 0,des: "水环境带来的debuff，随着回合数叠加层数，每层带来3%hp流失，降低5%最终伤害",exp: 0, emoji: '☠'},
+  {name: "水栖", min: 0,max: 0,des: "特殊体质，免疫【溺水】，处于【溺水】时速度翻倍，不处于【溺水】时伤害减半",exp: 0, eatable: false, emoji: '🦈', sp: true},
+  {name: "猛毒", min: 1,max: 50,des: "敌人受到的毒伤害+lv%",exp: 150, emoji: '☣'},
+  {name: "灵巧", min: 10,max: 30,des: "lv%概率闪避敌人的攻击和毒攻击，闪避成功则攻击完全无效",exp: 150, emoji: '🍃'},
+  {name: "粘液", min: 8,max: 16,des: "所有敌人的攻击力下降lv%(最后计算)",exp: 150, emoji: '🧿'},//🩸
+  {name: "惜别", min: 0,max: 0,des: "一局战斗一次，受到致死伤害时，血量变为1并复活并清除受到的持续伤害",exp: 0, emoji: '✝'},
+  {name: "连击", min: 1,max: 25,des: "攻击力变为原来的lv%，每次攻击2次（更多信息可阅读帮助：【进阶】技能顺序与结算）",exp: 1, emoji: '⚔'},
+  {name: "铁壁", min: 0,max: 0,des: "攻击力变为防御力的数值（更多信息可阅读帮助：【进阶】技能顺序与结算）",exp: 0, emoji: '🛡️'},
+  {name: "咒眼", min: 0,max: 20,des: "敌人的攻击-lv(最先计算)", emoji: '🧿'},
+  {name: "反击", min: 5,max: 20,des: "受到击中伤害时，给予lv%攻击力的真实反击伤害",exp: 150, emoji: '🙅‍'},
+  {name: "剧毒之体", mipn: 0,max: 0,des: "无法造成非毒伤害，敌人受到的毒伤害乘以1.2倍。回合结束后，解除自身受到的毒系debuff",exp: 0, emoji: '☣‍'},
+  {name: "威压", min: 0,max: 1,des: "敌人的等级-lv",exp: 100, emoji: '🧿'},
+  {name: "毒刃", min: 5,max: 40,des: "攻击伤害增加lv%，攻击和反击伤害变成毒属性",exp: 150, emoji: '☣'},
+  {name: "蛊神", min: 0,max: 0,des: "装备在本技能右侧的所有诅咒技能(查询技能可见\uD83E\uDDFF图标)效果变成2倍",exp: 0, emoji: '✡'},
+  {name: "舍身", min: 1,max: 40,des: "攻击力+lv,防御力-10",exp: 100, emoji: '🔪'},
+  {name: "伤噬", min: 1,max: 35,des: "敌人受伤+lv%(包括所有情况)",exp: 100, emoji: '🧿'},
+  {name: "镜中自我", min: 0,max: 0,des: "获得与敌人完全相同的技能，特殊体质。且速度比敌人高1点。",exp: 0, emoji: '👥'}
+]
