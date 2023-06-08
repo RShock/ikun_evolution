@@ -108,7 +108,7 @@ async def send_img(bot, msg: str):
     for txt in l:
         while txt:
             new_txt = "{0}{1}\n".format(new_txt, txt[:20])
-            txt = txt[30:]
+            txt = txt[20:]
 
     from utils.image_utils import text2image
     await bot.send(image(b64=(await text2image(new_txt, padding=10)).pic2bs4()))
